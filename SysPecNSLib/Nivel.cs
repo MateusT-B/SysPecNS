@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
+
 
 namespace SysPecNSLib
 {
@@ -53,19 +56,51 @@ namespace SysPecNSLib
         {
             Nivel nivel = new();
             // consulta no banco e retornar o Nível
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"SELECT * FROM niveis where id = {id};";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                nivel.Id = dr.GetInt32(0);
+                nivel.Nome = dr.GetString(1);
+                nivel.Sigla = dr.GetString(2);  
+            }
+
+
             return nivel;
         }
 
         public static List<Nivel> ObterLista()
         { 
-            List<Nivel> lista = new();
+            List<Nivel> lista = new List<Nivel>();
             // consulta para retornar a lista de níveis 
-
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from niveis";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(
+                    new(
+                        dr.GetInt32(0),
+                        dr.GetString(1), 
+                        dr.GetString(2)
+                        )
+                    );
+            }
             return lista;
         }
         public bool Atualizar() 
         {
-            return true;
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update niveis " +
+                $"set nome = '{Nome}', sigla = '{Sigla}' where id = {Id}";
+            if (cmd.ExecuteNonQuery() > 0)
+                return true;
+            else 
+                return false;
         }
         public void Excluir(int id)
         {

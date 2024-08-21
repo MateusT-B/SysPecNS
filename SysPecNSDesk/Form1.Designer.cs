@@ -36,12 +36,15 @@
             txtNumero2 = new TextBox();
             Valor2 = new Label();
             Valor1 = new Label();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // btnConfirma
             // 
             btnConfirma.Enabled = false;
-            btnConfirma.Location = new Point(433, 375);
+            btnConfirma.Location = new Point(306, 372);
             btnConfirma.Name = "btnConfirma";
             btnConfirma.Size = new Size(75, 23);
             btnConfirma.TabIndex = 0;
@@ -61,7 +64,7 @@
             // 
             lstResultado.FormattingEnabled = true;
             lstResultado.ItemHeight = 15;
-            lstResultado.Location = new Point(275, 155);
+            lstResultado.Location = new Point(148, 140);
             lstResultado.Name = "lstResultado";
             lstResultado.Size = new Size(233, 214);
             lstResultado.TabIndex = 2;
@@ -114,11 +117,38 @@
             Valor1.Text = "Valor 1";
             Valor1.Click += Valor1_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(497, 277);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 8;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(472, 219);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(472, 248);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 10;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
             Controls.Add(Valor1);
             Controls.Add(Valor2);
             Controls.Add(txtNumero2);
@@ -144,5 +174,8 @@
         private TextBox txtNumero2;
         private Label Valor2;
         private Label Valor1;
+        private Button button1;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }

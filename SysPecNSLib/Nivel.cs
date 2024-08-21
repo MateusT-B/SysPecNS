@@ -8,5 +8,70 @@ namespace SysPecNSLib
 {
     public class Nivel
     {
+        // atributos ()
+
+        // métodos de acesso (get de pegar valor) e (set de atribuir valor)
+        // propriedades
+       
+       
+        public int? Id { get; set; }
+        public string? Nome { get; set; }
+        public string? Sigla { get; set; }
+
+        // métodos construtores
+        public Nivel()
+        {
+        }
+        
+        public Nivel(string nome, string sigla) // sobrecarga de métodos
+        { 
+            Nome = nome; 
+            Sigla = sigla;  
+        }
+        public Nivel(int id, string nome, string sigla)
+            
+        {
+            Id = id;
+            Nome = nome;
+            Sigla = sigla;
+        }  
+
+        // métodos (requisitos)
+        /// <summary>
+        /// Método para inserir registro de nível na base de dados
+        /// </summary>
+        public void Inserir()
+        {
+            // conectando com o banco de dados
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"insert niveis(nome, sigla) values('{Nome}','{Sigla}')";
+            cmd.ExecuteNonQuery();
+
+        }
+        public static Nivel ObterPorId(int id)
+        {
+            Nivel nivel = new();
+            // consulta no banco e retornar o Nível
+            return nivel;
+        }
+
+        public static List<Nivel> ObterLista()
+        { 
+            List<Nivel> lista = new();
+            // consulta para retornar a lista de níveis 
+
+            return lista;
+        }
+        public bool Atualizar() 
+        {
+            return true;
+        }
+        public void Excluir(int id)
+        {
+            
+        }
+
+
     }
 }

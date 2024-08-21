@@ -14,10 +14,4 @@
     <PackageReference Include="MySql.Data" Version="8.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="SysPecNSLib">
-      <HintPath>bin\Debug\net8.0\SysPecNSLib.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

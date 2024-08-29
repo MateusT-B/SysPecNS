@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,21 +19,64 @@ namespace SysPecNSDesk
             InitializeComponent();
         }
 
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
-            // carregando o combobox de niveis 
-            var niveis = Nivel.ObterLista;
+            // carregando o combobox de níveis
+            var niveis = Nivel.ObterLista();
             cmbNivel.DataSource = niveis;
             cmbNivel.DisplayMember = "Nome";
             cmbNivel.ValueMember = "Id";
+            CarregaGrid();
 
-            // preenchendo o datagrid com os usuarios
-            var lista = Usuario.ObterLista();
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            // MessageBox.Show(cmbNivel.SelectedValue.ToString());
+            Usuario usuario = new(
+                    txtNome.Text,
+                    txtEmail.Text,
+                    txtSenha.Text,
+                    Nivel.ObterPorId(Convert.ToInt32(cmbNivel.SelectedValue))
+                );
+            usuario.Inserir();
+            if (usuario.Id > 0)
+            {
+                txtId.Text = usuario.Id.ToString();
+                MessageBox.Show($"O usuário {usuario.Nome}, " +
+                    $"foi inserido com sucesso, com o ID {usuario.Id} ");
+                txtId.Clear();
+                txtNome.Clear();
+                txtEmail.Clear();
+                txtConfSenha.Clear();
+                txtSenha.Clear();
+                txtNome.Focus();
+                FrmUsuario_Load(sender, e);
+
+            }
+            else
+            {
+                MessageBox.Show("Falha ao gravar o usuário!");
+            }
+
+
+        }
+
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusca.Text.Length > 0)
+            {
+                CarregaGrid(txtBusca.Text);
+            }
+            else
+            {
+                CarregaGrid();
+            }
+        }
+        private void CarregaGrid(string nome = "")
+        {
+            // preenchendo o datagrid com os usuários
+            var lista = Usuario.ObterLista(nome);
             dgvUsuarios.Rows.Clear();
             int cont = 0;
             foreach (var usuario in lista)
@@ -47,10 +91,34 @@ namespace SysPecNSDesk
             }
         }
 
-        private void btnInserir_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
+            if (VerificaControles())
+            {
+                var msg = MessageBox.Show("Deseja Sair?", "Confirmação de saida", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (msg == DialogResult.Yes) this.Close();
+            }
+            else
+            {
+                Close();
+            }
+        }
 
-            Usuario usuario = new();
+        private bool VerificaControles()
+        {
+            if (txtNome.Text != string.Empty
+            || txtEmail.Text != string.Empty
+            || txtSenha.Text != string.Empty
+            || txtConfSenha.Text != string.Empty)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
 
         }
     }

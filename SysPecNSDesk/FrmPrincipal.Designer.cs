@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
@@ -39,15 +40,20 @@
             listaToolStripMenuItem1 = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem2 = new ToolStripMenuItem();
+            movimentoToolStripMenuItem = new ToolStripMenuItem();
+            pedidosToolStripMenuItem = new ToolStripMenuItem();
+            operaçãoToolStripMenuItem = new ToolStripMenuItem();
+            caixaToolStripMenuItem = new ToolStripMenuItem();
+            sairToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, cadastrosToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, cadastrosToolStripMenuItem, movimentoToolStripMenuItem, operaçãoToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(737, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -115,12 +121,48 @@
             novoToolStripMenuItem2.Text = "&Novo";
             novoToolStripMenuItem2.Click += novoToolStripMenuItem2_Click;
             // 
+            // movimentoToolStripMenuItem
+            // 
+            movimentoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pedidosToolStripMenuItem });
+            movimentoToolStripMenuItem.Name = "movimentoToolStripMenuItem";
+            movimentoToolStripMenuItem.Size = new Size(81, 20);
+            movimentoToolStripMenuItem.Text = "&Movimento";
+            // 
+            // pedidosToolStripMenuItem
+            // 
+            pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            pedidosToolStripMenuItem.Size = new Size(116, 22);
+            pedidosToolStripMenuItem.Text = "&Pedidos";
+            // 
+            // operaçãoToolStripMenuItem
+            // 
+            operaçãoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { caixaToolStripMenuItem });
+            operaçãoToolStripMenuItem.Name = "operaçãoToolStripMenuItem";
+            operaçãoToolStripMenuItem.Size = new Size(70, 20);
+            operaçãoToolStripMenuItem.Text = "&Operação";
+            // 
+            // caixaToolStripMenuItem
+            // 
+            caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
+            caixaToolStripMenuItem.Size = new Size(103, 22);
+            caixaToolStripMenuItem.Text = "&Caixa";
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(38, 20);
+            sairToolStripMenuItem.Text = "&Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = Properties.Resources.vendas;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(737, 443);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";
@@ -145,5 +187,10 @@
         private ToolStripMenuItem novoToolStripMenuItem1;
         private ToolStripMenuItem listaToolStripMenuItem1;
         private ToolStripMenuItem novoToolStripMenuItem2;
+        private ToolStripMenuItem movimentoToolStripMenuItem;
+        private ToolStripMenuItem pedidosToolStripMenuItem;
+        private ToolStripMenuItem operaçãoToolStripMenuItem;
+        private ToolStripMenuItem caixaToolStripMenuItem;
+        private ToolStripMenuItem sairToolStripMenuItem;
     }
 }

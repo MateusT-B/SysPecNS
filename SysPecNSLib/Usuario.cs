@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Org.BouncyCastle.Crypto.Prng;
+using MySql.Data.MySqlClient;
 
 namespace SysPecNSLib
 {
     public class Usuario
     {
 
+        // private static MySqlCommand comando = Banco.Abrir();
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Email { get; set; }
@@ -89,12 +91,22 @@ namespace SysPecNSLib
             }
             return usuario;
         }
-        public static List<Usuario> ObterLista()
+        public static List<Usuario> ObterLista(string? nome = "")
         {
             List<Usuario> lista = new();
             var comandosSQL = Banco.Abrir();
             comandosSQL.CommandType = CommandType.Text;
-            comandosSQL.CommandText = "select * from usuarios order by nome";
+            if (nome == "")
+            {
+                comandosSQL.CommandText = "select * from usuarios order by nome";
+            }
+            else
+            {
+                comandosSQL.CommandText = $"select * from usuarios where nome " +
+                    $"like '%{nome}%'  order by nome";
+
+            }
+
             var dr = comandosSQL.ExecuteReader();
             while (dr.Read())
             {
@@ -129,13 +141,16 @@ namespace SysPecNSLib
                    dr.GetBoolean(5)
                    );
             }
+            cmd.Connection.Close();
             return usuario;
         }
         public void Atualizar()
         {
             // usuario: nome, senha, nível...
             var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_usuario_altera";
+            //cmd.Parameters.Add("spid", MySqlDbType.Int32).Value = Id;
             cmd.Parameters.AddWithValue("spid", Id);
             cmd.Parameters.AddWithValue("spnome", Nome);
             cmd.Parameters.AddWithValue("spnivel", Nivel.Id);
@@ -143,13 +158,12 @@ namespace SysPecNSLib
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
 
-
         }
         public static void Arquivar(int id)
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"update usuarios set ativos = 0 where id = {id}";
+            cmd.CommandText = $"update usuarios set ativo = 0 where id = {id}";
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
@@ -157,9 +171,10 @@ namespace SysPecNSLib
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"update usuarios set ativos = 1 where id = {id}";
+            cmd.CommandText = $"update usuarios set ativo = 1 where id = {id}";
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
+
         }
 
 

@@ -15,27 +15,36 @@ namespace SysPecNSLib
         public string? CPF { get; set; }
         public bool Ativo { get; set; }
         public string? Telefone { get; set; }
-        public int DataNas { get; set; }
+        public DateTime Data_nasc { get; set; }
+        public DateTime Data_cad { get; set; }
 
-        public Cliente(string? nome, string? email, string? telefone)
-        {
-            Nome = nome;
-            Email = email;
-            Telefone = telefone;
-        }
-        public Cliente(string? nome, string? email, string? cpf, int Datanas)   
+        public Cliente(string? nome, string? email, string? telefone, string? cpf, DateTime data_nasc, DateTime data_cad)
         {
             Nome = nome;
             Email = email;
             CPF = cpf;
+            Telefone = telefone;
+            Data_nasc = data_nasc;
+            Data_cad = data_cad;
         }
-        public Cliente(int id,string? nome, string? email, string? cpf, bool ativo, string? telefone, int datnasc)
+        public Cliente(string? nome, string? email, string? cpf,string? telefone, DateTime data_nasc, DateTime data_cad, bool ativo)   
+        {
+            Nome = nome;
+            Email = email;
+            CPF = cpf;
+            Telefone = telefone;
+            Data_nasc = data_nasc;
+            Data_cad = data_cad;
+            Ativo = ativo;
+        }
+        public Cliente(int id,string? nome, string? email, string? cpf, bool ativo, string? telefone, DateTime data_nasc,DateTime data_cad)
         {
             Id = id;
             Nome = nome;
             Telefone = telefone;
             Email = email;
-            DataNas = datnasc;
+            Data_cad = data_cad;
+            Data_nasc = data_nasc;
             CPF = cpf;
             Ativo = ativo;
         }
@@ -48,16 +57,18 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spemail", Email);
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
-            cmd.Parameters.AddWithValue("spdatanasc", DataNas);
-            var cr = cmd.ExecuteReader();
-            while (cr.Read())
+            cmd.Parameters.AddWithValue("spdatanasc", Data_nasc);
+            cmd.Parameters.AddWithValue("spdatacad", Data_cad);
+            cmd.Parameters.AddWithValue("spativo", Ativo);
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                Id = cr.GetInt32(0);
+                Id = dr.GetInt32(0);
             }
         }
         public static Cliente ObterPorId(int id)
         {
-
+            return
         }
     }
 }

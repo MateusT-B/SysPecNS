@@ -126,8 +126,13 @@ namespace SysPecNSDesk
         {
             int id = 0;
             int posicaoLinha = dgvUsuarios.CurrentRow.Index;
-            id = Convert.ToInt32(dgvUsuarios.Rows[posicaoLinha].Cells[0].Value );
+            id = Convert.ToInt32(dgvUsuarios.Rows[posicaoLinha].Cells[0].Value);
             MessageBox.Show(id.ToString());
+        }
+
+        private void cmbNivel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

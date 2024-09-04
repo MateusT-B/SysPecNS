@@ -20,26 +20,14 @@ namespace SysPecNSLib
         public double EstoqueMinimo { get; set; }
         public double ClasseDesconto { get; set; }
         public byte[]? Imagem { get; set; }
-        public DateTime DataCad { get; set; }
+        public DateTime? DataCad { get; set; }
 
         public Produto()
         {
            
         }
 
-        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime dataCad)
-        {
-            Id = id;
-            CodBar = codBar;
-            Descricao = descricao;
-            ValorUnit = valorUnit;
-            UnidadeVenda = unidadeVenda;
-            Categoria = categoria;
-            EstoqueMinimo = estoqueMinimo;
-            ClasseDesconto = classeDesconto;
-            Imagem = imagem;
-            DataCad = dataCad;
-        }
+
             
             public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime dataCad)
         {
@@ -77,6 +65,19 @@ namespace SysPecNSLib
             EstoqueMinimo = estoqueMinimo;
             ClasseDesconto = classeDesconto;
 
+        }      
+        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem = null, DateTime? dataCad = null)
+        {
+            Id = id;
+            CodBar = codBar;
+            Descricao = descricao;
+            ValorUnit = valorUnit;
+            UnidadeVenda = unidadeVenda;
+            Categoria = categoria;
+            EstoqueMinimo = estoqueMinimo;
+            ClasseDesconto = classeDesconto;
+            Imagem = imagem;
+            DataCad = dataCad;
         }
         public void Inserir()
         {
@@ -89,7 +90,7 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spunidade_venda",UnidadeVenda);
             cmd.Parameters.AddWithValue("spcategoria_id", Categoria.Id);
             cmd.Parameters.AddWithValue("spestoque_minimo",EstoqueMinimo);
-            cmd.Parameters.AddWithValue("spclassedesconto", ClasseDesconto);
+            cmd.Parameters.AddWithValue("spclasse_desconto", ClasseDesconto);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
         public void Atualizar()
@@ -104,7 +105,8 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spunidade_venda", UnidadeVenda);
             cmd.Parameters.AddWithValue("spcategoria_id", Categoria.Id);
             cmd.Parameters.AddWithValue("spestoque_minimo", EstoqueMinimo);
-            cmd.Parameters.AddWithValue("spclassedesconto", ClasseDesconto);
+            cmd.Parameters.AddWithValue("spclasse_desconto", ClasseDesconto);
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.ExecuteNonQuery();
         }
         public static Produto ObterPorId(int id)
@@ -124,7 +126,7 @@ namespace SysPecNSLib
                     Categoria.ObterPorId(dr.GetInt32(5)),
                     dr.GetDouble(6),
                     dr.GetDouble(7),
-                    (byte[])dr.GetValue(8),
+                    null,
                     dr.GetDateTime(9)
                     );
             }
@@ -148,7 +150,7 @@ namespace SysPecNSLib
                     Categoria.ObterPorId(dr.GetInt32(5)),
                     dr.GetDouble(6),
                     dr.GetDouble(7),
-                    (byte[])dr.GetValue(8),
+                    null,
                     dr.GetDateTime(9)
                     ));
              

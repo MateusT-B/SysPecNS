@@ -66,9 +66,10 @@ namespace SysPecNSLib
                 Id = dr.GetInt32(0);
             }
         }
-        public static Cliente ObterPorId(int id)
+        /*public static Cliente ObterPorId(int id)
         {
             return
         }
+        */
     }
 }

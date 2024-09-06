@@ -58,8 +58,6 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
             cmd.Parameters.AddWithValue("spdatanasc", Data_nasc);
-            cmd.Parameters.AddWithValue("spdatacad", Data_cad);
-            cmd.Parameters.AddWithValue("spativo", Ativo);
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -68,8 +66,26 @@ namespace SysPecNSLib
         }
         /*public static Cliente ObterPorId(int id)
         {
-            return
+            Cliente cliente = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from cliente where id ={id}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                cliente = new(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetBoolean(4),
+
+                    )
+             
+            }
+
+          */  
         }
-        */
+        
     }
 }

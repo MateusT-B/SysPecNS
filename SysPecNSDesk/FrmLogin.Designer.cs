@@ -41,7 +41,7 @@
             // 
             // btnLogar
             // 
-            btnLogar.Location = new Point(130, 187);
+            btnLogar.Location = new Point(131, 187);
             btnLogar.Name = "btnLogar";
             btnLogar.Size = new Size(75, 23);
             btnLogar.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(266, 187);
+            btnCancelar.Location = new Point(247, 187);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 1;

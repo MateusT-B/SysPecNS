@@ -34,8 +34,6 @@
             dataGridView1 = new DataGridView();
             lblDataCadastro = new Label();
             dateTimePicker1 = new DateTimePicker();
-            btnCancelar = new Button();
-            btnDeletar = new Button();
             btnEditar = new Button();
             btnInserir = new Button();
             lblDataDeNascimento = new Label();
@@ -52,6 +50,12 @@
             txtNome = new TextBox();
             txtIdCliente = new TextBox();
             tabPage2 = new TabPage();
+            btnEditarEndereco = new Button();
+            btnInserirEndereço = new Button();
+            label8 = new Label();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
             textBox3 = new TextBox();
             label7 = new Label();
             cmbUf = new ComboBox();
@@ -65,10 +69,6 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView2 = new DataGridView();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            label8 = new Label();
             groupBox1.SuspendLayout();
             tabPage.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -80,9 +80,9 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(tabPage);
-            groupBox1.Location = new Point(98, 22);
+            groupBox1.Location = new Point(36, 23);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(605, 560);
+            groupBox1.Size = new Size(628, 563);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
@@ -91,7 +91,7 @@
             // 
             tabPage.Controls.Add(tabPage1);
             tabPage.Controls.Add(tabPage2);
-            tabPage.Location = new Point(6, 22);
+            tabPage.Location = new Point(21, 22);
             tabPage.Name = "tabPage";
             tabPage.SelectedIndex = 0;
             tabPage.Size = new Size(593, 521);
@@ -102,8 +102,6 @@
             tabPage1.Controls.Add(dataGridView1);
             tabPage1.Controls.Add(lblDataCadastro);
             tabPage1.Controls.Add(dateTimePicker1);
-            tabPage1.Controls.Add(btnCancelar);
-            tabPage1.Controls.Add(btnDeletar);
             tabPage1.Controls.Add(btnEditar);
             tabPage1.Controls.Add(btnInserir);
             tabPage1.Controls.Add(lblDataDeNascimento);
@@ -132,13 +130,13 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(26, 326);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(526, 150);
+            dataGridView1.Size = new Size(533, 150);
             dataGridView1.TabIndex = 19;
             // 
             // lblDataCadastro
             // 
             lblDataCadastro.AutoSize = true;
-            lblDataCadastro.Location = new Point(381, 203);
+            lblDataCadastro.Location = new Point(364, 210);
             lblDataCadastro.Name = "lblDataCadastro";
             lblDataCadastro.Size = new Size(97, 15);
             lblDataCadastro.TabIndex = 18;
@@ -152,27 +150,9 @@
             dateTimePicker1.Size = new Size(126, 23);
             dateTimePicker1.TabIndex = 17;
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(425, 277);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 16;
-            btnCancelar.Text = "&Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnDeletar
-            // 
-            btnDeletar.Location = new Point(294, 277);
-            btnDeletar.Name = "btnDeletar";
-            btnDeletar.Size = new Size(75, 23);
-            btnDeletar.TabIndex = 15;
-            btnDeletar.Text = "&Deletar";
-            btnDeletar.UseVisualStyleBackColor = true;
-            // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(160, 277);
+            btnEditar.Location = new Point(364, 277);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 14;
@@ -181,7 +161,7 @@
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(29, 277);
+            btnInserir.Location = new Point(137, 277);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(75, 23);
             btnInserir.TabIndex = 13;
@@ -191,7 +171,7 @@
             // lblDataDeNascimento
             // 
             lblDataDeNascimento.AutoSize = true;
-            lblDataDeNascimento.Location = new Point(376, 151);
+            lblDataDeNascimento.Location = new Point(364, 151);
             lblDataDeNascimento.Name = "lblDataDeNascimento";
             lblDataDeNascimento.Size = new Size(114, 15);
             lblDataDeNascimento.TabIndex = 12;
@@ -208,7 +188,7 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(29, 203);
+            chkAtivo.Location = new Point(29, 210);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 10;
@@ -225,7 +205,7 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(29, 151);
+            lblTelefone.Location = new Point(26, 154);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(51, 15);
             lblTelefone.TabIndex = 8;
@@ -234,7 +214,7 @@
             // lblCpf
             // 
             lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(318, 94);
+            lblCpf.Location = new Point(307, 94);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(28, 15);
             lblCpf.TabIndex = 7;
@@ -243,7 +223,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(29, 94);
+            lblEmail.Location = new Point(26, 94);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 6;
@@ -252,7 +232,7 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(147, 21);
+            lblNome.Location = new Point(137, 21);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(40, 15);
             lblNome.TabIndex = 5;
@@ -261,7 +241,7 @@
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(29, 21);
+            lblID.Location = new Point(26, 21);
             lblID.Name = "lblID";
             lblID.Size = new Size(18, 15);
             lblID.TabIndex = 4;
@@ -297,6 +277,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnEditarEndereco);
+            tabPage2.Controls.Add(btnInserirEndereço);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(textBox6);
             tabPage2.Controls.Add(textBox5);
@@ -321,6 +303,54 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Endereco";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarEndereco
+            // 
+            btnEditarEndereco.Location = new Point(344, 282);
+            btnEditarEndereco.Name = "btnEditarEndereco";
+            btnEditarEndereco.Size = new Size(75, 23);
+            btnEditarEndereco.TabIndex = 18;
+            btnEditarEndereco.Text = "&Editar";
+            btnEditarEndereco.UseVisualStyleBackColor = true;
+            // 
+            // btnInserirEndereço
+            // 
+            btnInserirEndereço.Location = new Point(151, 282);
+            btnInserirEndereço.Name = "btnInserirEndereço";
+            btnInserirEndereço.Size = new Size(75, 23);
+            btnInserirEndereço.TabIndex = 17;
+            btnInserirEndereço.Text = "&Inserir";
+            btnInserirEndereço.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(241, 89);
+            label8.Name = "label8";
+            label8.Size = new Size(51, 15);
+            label8.TabIndex = 16;
+            label8.Text = "Número";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(241, 110);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(100, 23);
+            textBox6.TabIndex = 15;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(398, 203);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(148, 23);
+            textBox5.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(174, 203);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(203, 23);
+            textBox4.TabIndex = 13;
             // 
             // textBox3
             // 
@@ -406,7 +436,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(331, 21);
+            label2.Location = new Point(174, 21);
             label2.Name = "label2";
             label2.Size = new Size(69, 15);
             label2.TabIndex = 2;
@@ -429,43 +459,14 @@
             dataGridView2.Size = new Size(543, 133);
             dataGridView2.TabIndex = 0;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(174, 203);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(203, 23);
-            textBox4.TabIndex = 13;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(398, 203);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(148, 23);
-            textBox5.TabIndex = 14;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(241, 110);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 15;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(241, 89);
-            label8.Name = "label8";
-            label8.Size = new Size(51, 15);
-            label8.TabIndex = 16;
-            label8.Text = "Número";
-            // 
             // FrmCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 617);
+            ClientSize = new Size(706, 620);
             Controls.Add(groupBox1);
             Name = "FrmCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCliente";
             groupBox1.ResumeLayout(false);
             tabPage.ResumeLayout(false);
@@ -497,8 +498,6 @@
         private CheckBox chkAtivo;
         private TextBox txtTelefone;
         private Label lblTelefone;
-        private Button btnCancelar;
-        private Button btnDeletar;
         private Button btnEditar;
         private Button btnInserir;
         private DateTimePicker dateTimePicker1;
@@ -521,5 +520,7 @@
         private TextBox textBox6;
         private TextBox textBox5;
         private TextBox textBox4;
+        private Button btnEditarEndereco;
+        private Button btnInserirEndereço;
     }
 }

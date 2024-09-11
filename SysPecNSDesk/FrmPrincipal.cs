@@ -39,7 +39,7 @@ namespace SysPecNSDesk
             frmProduto.Show();
         }
 
-        
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             FrmLogin frmLogin = new();
@@ -53,6 +53,13 @@ namespace SysPecNSDesk
             FrmPedidoNovo frmPedidoNovo = new();
             frmPedidoNovo.MdiParent = this;
             frmPedidoNovo.Show();
+        }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmcliente = new();
+            frmcliente.MdiParent = this;
+            frmcliente.Show();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace SysPecNSDesk
         private void btnInserePedido_Click_1(object sender, EventArgs e)
         {
             Pedido pedido = new(
-              Program.UsuarioLogado.Id,
+              Program.UsuarioLogado,
               Cliente.ObterPorId(int.Parse(txtIdCliente.Text)), 0
 
               );

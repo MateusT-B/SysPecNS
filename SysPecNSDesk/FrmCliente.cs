@@ -12,11 +12,6 @@ namespace SysPecNSDesk
 {
     public partial class FrmCliente : Form
     {
-        
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

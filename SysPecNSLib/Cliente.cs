@@ -14,10 +14,10 @@ namespace SysPecNSLib
         public string? Nome { get; set; }
         public string? Email { get; set; }
         public string? CPF { get; set; }
-        public bool Ativo { get; set; }
         public string? Telefone { get; set; }
         public DateTime Data_nasc { get; set; }
         public DateTime Data_cad { get; set; }
+         public bool Ativo { get; set; }
 
 
         public Cliente()

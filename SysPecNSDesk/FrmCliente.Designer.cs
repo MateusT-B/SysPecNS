@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            tabPage = new TabControl();
+            tpClienteEnd = new TabControl();
             tabPage1 = new TabPage();
             dataGridView1 = new DataGridView();
             lblDataCadastro = new Label();
@@ -70,7 +70,7 @@
             label1 = new Label();
             dataGridView2 = new DataGridView();
             groupBox1.SuspendLayout();
-            tabPage.SuspendLayout();
+            tpClienteEnd.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage2.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(tabPage);
+            groupBox1.Controls.Add(tpClienteEnd);
             groupBox1.Location = new Point(36, 23);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(628, 563);
@@ -87,15 +87,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // tabPage
+            // tpClienteEnd
             // 
-            tabPage.Controls.Add(tabPage1);
-            tabPage.Controls.Add(tabPage2);
-            tabPage.Location = new Point(21, 22);
-            tabPage.Name = "tabPage";
-            tabPage.SelectedIndex = 0;
-            tabPage.Size = new Size(593, 521);
-            tabPage.TabIndex = 0;
+            tpClienteEnd.Controls.Add(tabPage1);
+            tpClienteEnd.Controls.Add(tabPage2);
+            tpClienteEnd.Location = new Point(21, 22);
+            tpClienteEnd.Name = "tpClienteEnd";
+            tpClienteEnd.SelectedIndex = 0;
+            tpClienteEnd.Size = new Size(593, 521);
+            tpClienteEnd.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -301,7 +301,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(585, 493);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Endereco";
+            tabPage2.Text = "Endereço";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnEditarEndereco
@@ -469,7 +469,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCliente";
             groupBox1.ResumeLayout(false);
-            tabPage.ResumeLayout(false);
+            tpClienteEnd.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -482,7 +482,7 @@
         #endregion
 
         private GroupBox groupBox1;
-        private TabControl tabPage;
+        private TabControl tpClienteEnd;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private Label lblID;

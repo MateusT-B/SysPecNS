@@ -26,7 +26,7 @@ namespace SysPecNSDesk
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text != string.Empty && txtSenha.Text != string.Empty) 
+            if (txtEmail.Text != string.Empty && txtSenha.Text != string.Empty)
             {
                 var usuario = Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
                 if (usuario.Id > 0 && usuario.Ativo)
@@ -41,7 +41,7 @@ namespace SysPecNSDesk
                         MessageBox.Show("Seu usuário está inativo. \n Procure a gerência.");
                         Application.Exit();
                     }
-                
+
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace SysPecNSDesk
                 MessageBox.Show("Você deve preencher email e senha");
                 txtEmail.Focus();
             }
-            
+
         }
     }
 }

@@ -41,13 +41,13 @@
             novoToolStripMenuItem2 = new ToolStripMenuItem();
             movimentoToolStripMenuItem = new ToolStripMenuItem();
             pedidosToolStripMenuItem = new ToolStripMenuItem();
+            novoToolStripMenuItem3 = new ToolStripMenuItem();
+            listaToolStripMenuItem2 = new ToolStripMenuItem();
             operaçãoToolStripMenuItem = new ToolStripMenuItem();
             caixaToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            novoToolStripMenuItem3 = new ToolStripMenuItem();
-            listaToolStripMenuItem2 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -72,52 +72,52 @@
             // 
             clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, listaToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(122, 22);
+            clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "&Clientes";
             // 
             // novoToolStripMenuItem
             // 
             novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(103, 22);
+            novoToolStripMenuItem.Size = new Size(180, 22);
             novoToolStripMenuItem.Text = "&Novo";
             // 
             // listaToolStripMenuItem
             // 
             listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            listaToolStripMenuItem.Size = new Size(103, 22);
+            listaToolStripMenuItem.Size = new Size(180, 22);
             listaToolStripMenuItem.Text = "&Lista";
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem1, listaToolStripMenuItem1 });
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(122, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "&Produtos";
             // 
             // novoToolStripMenuItem1
             // 
             novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-            novoToolStripMenuItem1.Size = new Size(103, 22);
+            novoToolStripMenuItem1.Size = new Size(180, 22);
             novoToolStripMenuItem1.Text = "&Novo";
             novoToolStripMenuItem1.Click += novoToolStripMenuItem1_Click;
             // 
             // listaToolStripMenuItem1
             // 
             listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            listaToolStripMenuItem1.Size = new Size(103, 22);
+            listaToolStripMenuItem1.Size = new Size(180, 22);
             listaToolStripMenuItem1.Text = "&Lista";
             // 
             // usuáriosToolStripMenuItem
             // 
             usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem2 });
             usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            usuáriosToolStripMenuItem.Size = new Size(122, 22);
+            usuáriosToolStripMenuItem.Size = new Size(180, 22);
             usuáriosToolStripMenuItem.Text = "&Usuários";
             // 
             // novoToolStripMenuItem2
             // 
             novoToolStripMenuItem2.Name = "novoToolStripMenuItem2";
-            novoToolStripMenuItem2.Size = new Size(103, 22);
+            novoToolStripMenuItem2.Size = new Size(180, 22);
             novoToolStripMenuItem2.Text = "&Novo";
             novoToolStripMenuItem2.Click += novoToolStripMenuItem2_Click;
             // 
@@ -135,6 +135,19 @@
             pedidosToolStripMenuItem.Size = new Size(180, 22);
             pedidosToolStripMenuItem.Text = "&Pedidos";
             // 
+            // novoToolStripMenuItem3
+            // 
+            novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
+            novoToolStripMenuItem3.Size = new Size(180, 22);
+            novoToolStripMenuItem3.Text = "&Novo";
+            novoToolStripMenuItem3.Click += novoToolStripMenuItem3_Click;
+            // 
+            // listaToolStripMenuItem2
+            // 
+            listaToolStripMenuItem2.Name = "listaToolStripMenuItem2";
+            listaToolStripMenuItem2.Size = new Size(180, 22);
+            listaToolStripMenuItem2.Text = "&Lista de Pedidos";
+            // 
             // operaçãoToolStripMenuItem
             // 
             operaçãoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { caixaToolStripMenuItem });
@@ -145,7 +158,7 @@
             // caixaToolStripMenuItem
             // 
             caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            caixaToolStripMenuItem.Size = new Size(103, 22);
+            caixaToolStripMenuItem.Size = new Size(180, 22);
             caixaToolStripMenuItem.Text = "&Caixa";
             // 
             // sairToolStripMenuItem
@@ -169,19 +182,6 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(12, 17);
             toolStripStatusLabel1.Text = "-";
-            // 
-            // novoToolStripMenuItem3
-            // 
-            novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
-            novoToolStripMenuItem3.Size = new Size(180, 22);
-            novoToolStripMenuItem3.Text = "&Novo";
-            novoToolStripMenuItem3.Click += novoToolStripMenuItem3_Click;
-            // 
-            // listaToolStripMenuItem2
-            // 
-            listaToolStripMenuItem2.Name = "listaToolStripMenuItem2";
-            listaToolStripMenuItem2.Size = new Size(180, 22);
-            listaToolStripMenuItem2.Text = "&Lista de Pedidos";
             // 
             // FrmPrincipal
             // 

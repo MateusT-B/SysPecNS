@@ -22,8 +22,6 @@ namespace SysPecNSDesk
             FrmUsuario frmUsuario = new();
             frmUsuario.MdiParent = this;
             frmUsuario.Show();
-
-            //frmUsuario.ShowDialog();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,10 +39,10 @@ namespace SysPecNSDesk
             frmProduto.Show();
         }
 
+        
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             FrmLogin frmLogin = new();
-            //frmLogin.MdiParent = this;
             frmLogin.ShowDialog();
             Text += $" ({Program.UsuarioLogado.Email})";
             toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Nome} - {Program.UsuarioLogado.Nivel.Nome}";

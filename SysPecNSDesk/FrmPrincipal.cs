@@ -57,7 +57,7 @@ namespace SysPecNSDesk
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCliente frmcliente = new();
+            FrmClienteNovo frmcliente = new();   
             frmcliente.MdiParent = this;
             frmcliente.Show();
         }

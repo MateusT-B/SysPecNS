@@ -38,7 +38,7 @@ namespace SysPecNSLib
             Bairro = bairro;
             Cidade = cidade;
             Uf = uf;
-            TipoEndereco = tipo_Endereco;
+            TipoEndereco = tipoEndereco;
         }
 
         public Endereco(int id, Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
@@ -52,7 +52,7 @@ namespace SysPecNSLib
             Bairro = bairro;
             Cidade = cidade;
             Uf = uf;
-            TipoEndereco = tipo_Endereco;
+            TipoEndereco = tipoEndereco;
         }
         public Endereco(string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
         {
@@ -63,13 +63,13 @@ namespace SysPecNSLib
             Bairro = bairro;
             Cidade = cidade;
             Uf = uf;
-            TipoEndereco = tipo_Endereco;
+            TipoEndereco = tipoEndereco;
         }
 
         public void Inserir()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_endereco_insert";
             cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
             cmd.Parameters.AddWithValue("spcep", Cep);
@@ -110,6 +110,7 @@ namespace SysPecNSLib
                     dr.GetString(8),
                     dr.GetString(9)
                     );
+                    
             }
             return endereco;
 
@@ -154,7 +155,7 @@ namespace SysPecNSLib
         {
             List<Endereco> enderecos = new();
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = $"select * from enderecos where cliente_id = {clienteId}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())

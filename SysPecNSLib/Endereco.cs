@@ -126,7 +126,7 @@ namespace SysPecNSLib
             }
             else
             {
-                cmd.CommandText = $"select * from enderecos where nome LIKE '%{endereco}%' order by nome";
+                cmd.CommandText = $"select * from enderecos where nome like '%{endereco}%' order by nome";
 
             }
 
@@ -183,7 +183,6 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_endereco_update";
-
             cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
             cmd.Parameters.AddWithValue("spcep", Cep);
             cmd.Parameters.AddWithValue("splogradouro", Logradouro);
@@ -193,8 +192,6 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcidade", Cidade);
             cmd.Parameters.AddWithValue("spuf", Uf);
             cmd.Parameters.AddWithValue("sptipo_endereco", TipoEndereco);
-
-
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }

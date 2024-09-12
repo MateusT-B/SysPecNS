@@ -252,7 +252,7 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(32, 213);
+            chkAtivo.Location = new Point(29, 201);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 10;
@@ -261,7 +261,7 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(29, 172);
+            txtTelefone.Location = new Point(26, 172);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(183, 23);
             txtTelefone.TabIndex = 9;
@@ -269,7 +269,7 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(29, 157);
+            lblTelefone.Location = new Point(26, 154);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(51, 15);
             lblTelefone.TabIndex = 8;
@@ -278,7 +278,7 @@
             // lblCpf
             // 
             lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(310, 97);
+            lblCpf.Location = new Point(318, 94);
             lblCpf.Name = "lblCpf";
             lblCpf.Size = new Size(28, 15);
             lblCpf.TabIndex = 7;
@@ -313,7 +313,7 @@
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(307, 112);
+            txtCpf.Location = new Point(318, 112);
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(209, 23);
             txtCpf.TabIndex = 3;
@@ -484,7 +484,6 @@
             // 
             txtIdEndereco.Location = new Point(31, 39);
             txtIdEndereco.Name = "txtIdEndereco";
-            txtIdEndereco.ReadOnly = true;
             txtIdEndereco.Size = new Size(67, 23);
             txtIdEndereco.TabIndex = 7;
             // 

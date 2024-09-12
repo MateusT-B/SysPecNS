@@ -51,26 +51,26 @@ namespace SysPecNSDesk
         {
             Endereco endereco = new(
                  Cliente.ObterPorId(int.Parse(txtIdEndereco.Text)),
-                 txtLogradouro.Text,
                  txtCep.Text,
+                 txtLogradouro.Text,
                  txtNumero.Text,
-                 cmbUf.Text,
-                 txtCidade.Text,
                  txtComplemento.Text,
                  txtBairro.Text,
+                 txtCidade.Text,
+                 cmbUf.Text,
                  cmbTipoEndereco.Text
                 );
             endereco.Inserir();
-            if (endereco.Id>0)
+            if (endereco.Id > 0)
             {
                 txtIdEndereco.Text = endereco.Id.ToString();
                 MessageBox.Show($"O Endereço foi cadastro com sucesso");
-                txtLogradouro.Clear();
                 txtCep.Clear();
+                txtLogradouro.Clear();
                 txtNumero.Clear();
-                txtCidade.Clear();
                 txtComplemento.Clear();
                 txtBairro.Clear();
+                txtCidade.Clear();
             }
             else
             {

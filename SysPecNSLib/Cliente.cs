@@ -12,9 +12,9 @@ namespace SysPecNSLib
     {
         public int Id { get; set; }
         public string? Nome { get; set; }
-        public string? Email { get; set; }
         public string? CPF { get; set; }
         public string? Telefone { get; set; }
+        public string? Email { get; set; }
         public DateTime Data_nasc { get; set; }
         public DateTime Data_cad { get; set; }
          public bool Ativo { get; set; }
@@ -25,34 +25,35 @@ namespace SysPecNSLib
           
         }
 
-        public Cliente(string? nome, string? email, string? telefone, string? cpf, DateTime data_nasc, DateTime data_cad)
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime data_cad, DateTime data_nasc)
         {
             Nome = nome;
-            Email = email;
             CPF = cpf;
             Telefone = telefone;
-            Data_nasc = data_nasc;
+            Email = email;
             Data_cad = data_cad;
+            Data_nasc = data_nasc;
+        
         }
-        public Cliente(string? nome, string? email, string? cpf,string? telefone, DateTime data_nasc, DateTime data_cad, bool ativo)   
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime data_cad, DateTime data_nasc, bool ativo)   
         {
             Nome = nome;
-            Email = email;
             CPF = cpf;
             Telefone = telefone;
-            Data_nasc = data_nasc;
+            Email = email;
             Data_cad = data_cad;
+            Data_nasc = data_nasc;
             Ativo = ativo;
         }
-        public Cliente(int id,string? nome, string? email, string? cpf, bool ativo, string? telefone, DateTime data_nasc,DateTime data_cad)
+        public Cliente(int id,string? nome, string? cpf,string? telefone, string? email, DateTime data_cad, DateTime data_nasc,bool ativo)
         {
             Id = id;
             Nome = nome;
+            CPF = cpf;
             Telefone = telefone;
             Email = email;
             Data_cad = data_cad;
             Data_nasc = data_nasc;
-            CPF = cpf;
             Ativo = ativo;
         }
         public void Inserir()
@@ -76,7 +77,7 @@ namespace SysPecNSLib
             Cliente cliente = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from cliente where id ={id}";
+            cmd.CommandText = $"select * from clientes where id ={id}";
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -85,10 +86,10 @@ namespace SysPecNSLib
                     dr.GetString(1),
                     dr.GetString(2),
                     dr.GetString(3),
-                    dr.GetBoolean(4),
-                    dr.GetString(5),
+                    dr.GetString(4),
+                    dr.GetDateTime(5),
                     dr.GetDateTime(6),
-                    dr.GetDateTime(7)
+                    dr.GetBoolean(7)
                     );
              
             }
@@ -119,10 +120,10 @@ namespace SysPecNSLib
                     dr.GetString(1),
                     dr.GetString(2),
                     dr.GetString(3),
-                    dr.GetBoolean(4),
-                    dr.GetString(5),
+                    dr.GetString(4),
+                    dr.GetDateTime(5),
                     dr.GetDateTime(6),
-                    dr.GetDateTime(7)
+                    dr.GetBoolean(7)
                     )
                     );
             }

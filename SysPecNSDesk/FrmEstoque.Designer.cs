@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvEstoque = new DataGridView();
             clnProdutoId = new DataGridViewTextBoxColumn();
             clnQuantidade = new DataGridViewTextBoxColumn();
             clnDataUltimoMovimento = new DataGridViewTextBoxColumn();
@@ -40,21 +40,22 @@
             dtpDataUltimoMovimento = new DateTimePicker();
             btnInserir = new Button();
             btnAtualizar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvEstoque
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { clnProdutoId, clnQuantidade, clnDataUltimoMovimento });
-            dataGridView1.Location = new Point(57, 196);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(404, 187);
-            dataGridView1.TabIndex = 0;
+            dgvEstoque.AllowUserToAddRows = false;
+            dgvEstoque.AllowUserToDeleteRows = false;
+            dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEstoque.Columns.AddRange(new DataGridViewColumn[] { clnProdutoId, clnQuantidade, clnDataUltimoMovimento });
+            dgvEstoque.Location = new Point(57, 196);
+            dgvEstoque.Name = "dgvEstoque";
+            dgvEstoque.ReadOnly = true;
+            dgvEstoque.RowHeadersVisible = false;
+            dgvEstoque.Size = new Size(404, 187);
+            dgvEstoque.TabIndex = 0;
+            dgvEstoque.CellContentClick += dgvEstoque_CellContentClick;
             // 
             // clnProdutoId
             // 
@@ -149,7 +150,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(649, 450);
+            ClientSize = new Size(585, 445);
             Controls.Add(btnAtualizar);
             Controls.Add(btnInserir);
             Controls.Add(dtpDataUltimoMovimento);
@@ -158,17 +159,17 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvEstoque);
             Name = "FrmEstoque";
             Text = "FrmEstoque";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvEstoque;
         private DataGridViewTextBoxColumn clnProdutoId;
         private DataGridViewTextBoxColumn clnQuantidade;
         private DataGridViewTextBoxColumn clnDataUltimoMovimento;

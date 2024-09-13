@@ -16,5 +16,12 @@ namespace SysPecNSDesk
         {
             InitializeComponent();
         }
+
+        private void dgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = 0;
+            int posicaoLinha = dgvEstoque.CurrentRow.Index;
+            id = Convert.ToInt32(dgvEstoque.Rows[posicaoLinha]);
+        }
     }
 }

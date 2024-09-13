@@ -482,8 +482,9 @@
             // 
             // txtIdEndereco
             // 
-            txtIdEndereco.Location = new Point(31, 39);
+            txtIdEndereco.Location = new Point(31, 42);
             txtIdEndereco.Name = "txtIdEndereco";
+            txtIdEndereco.ReadOnly = true;
             txtIdEndereco.Size = new Size(67, 23);
             txtIdEndereco.TabIndex = 7;
             // 

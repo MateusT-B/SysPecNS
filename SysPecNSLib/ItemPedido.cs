@@ -51,6 +51,7 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spquantidade", Quantidade);
             cmd.Parameters.AddWithValue("spdesconto", Desconto);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.ExecuteNonQuery();
         }
 
         public static List<ItemPedido> ObterListaPorPedido(int id)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SysPecNSLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace SysPecNSDesk
 {
     public partial class FrmEstoque : Form
     {
+        Produto produto;
         public FrmEstoque()
         {
             InitializeComponent();
@@ -19,9 +21,18 @@ namespace SysPecNSDesk
 
         private void dgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = 0;
-            int posicaoLinha = dgvEstoque.CurrentRow.Index;
-            id = Convert.ToInt32(dgvEstoque.Rows[posicaoLinha]);
+            
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new(
+                Convert.ToInt32(txtProdutoId.Text),
+                Convert.ToDouble(txtQuantidade.Text),
+                dtpDataUltimoMovimento.Value = DateTime.Now
+                );
+
+        }
+
     }
 }

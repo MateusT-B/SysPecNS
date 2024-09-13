@@ -12,18 +12,18 @@ namespace SysPecNSLib
 
         public int ProdutoID { get; set; }
         public double Quantidade { get; set; }
-        public string? DataUltimoMovimento { get; set; }
+        public DateTime DataUltimoMovimento { get; set; }
 
         public Estoque()
         {
          
         }
-        public Estoque(double quantidade, string? dataUltimoMovimento)
+        public Estoque(double quantidade, DateTime dataUltimoMovimento)
         {
             Quantidade = quantidade;
             DataUltimoMovimento = dataUltimoMovimento;
         }
-        public Estoque(int produtoID, double quantidade, string? dataUltimoMovimento)
+        public Estoque(int produtoID, double quantidade, DateTime dataUltimoMovimento)
         {
             ProdutoID = produtoID;
             Quantidade = quantidade;
@@ -43,7 +43,7 @@ namespace SysPecNSLib
                 estoque = new(
                     dr.GetInt32(0),
                     dr.GetDouble(1),
-                    dr.GetString(2)
+                    dr.GetDateTime(2)
                     );
             }
             return estoque;
@@ -59,7 +59,7 @@ namespace SysPecNSLib
                 estoques.Add(new(
                     dr.GetInt32(0),
                     dr.GetDouble(1),
-                    dr.GetString(2)
+                    dr.GetDateTime(2)
                     )
                     );
             }

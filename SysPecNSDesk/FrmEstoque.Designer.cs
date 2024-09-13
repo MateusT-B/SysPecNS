@@ -38,7 +38,7 @@
             txtProdutoId = new TextBox();
             txtQuantidade = new TextBox();
             dtpDataUltimoMovimento = new DateTimePicker();
-            btnInserir = new Button();
+            btnPesquisar = new Button();
             btnAtualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             SuspendLayout();
@@ -128,14 +128,15 @@
             dtpDataUltimoMovimento.Size = new Size(121, 23);
             dtpDataUltimoMovimento.TabIndex = 6;
             // 
-            // btnInserir
+            // btnPesquisar
             // 
-            btnInserir.Location = new Point(495, 245);
-            btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(75, 23);
-            btnInserir.TabIndex = 7;
-            btnInserir.Text = "Inserir";
-            btnInserir.UseVisualStyleBackColor = true;
+            btnPesquisar.Location = new Point(495, 245);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(75, 23);
+            btnPesquisar.TabIndex = 7;
+            btnPesquisar.Text = "&Pesquisar";
+            btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // btnAtualizar
             // 
@@ -152,7 +153,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(585, 445);
             Controls.Add(btnAtualizar);
-            Controls.Add(btnInserir);
+            Controls.Add(btnPesquisar);
             Controls.Add(dtpDataUltimoMovimento);
             Controls.Add(txtQuantidade);
             Controls.Add(txtProdutoId);
@@ -179,7 +180,7 @@
         private TextBox txtProdutoId;
         private TextBox txtQuantidade;
         private DateTimePicker dtpDataUltimoMovimento;
-        private Button btnInserir;
+        private Button btnPesquisar;
         private Button btnAtualizar;
     }
 }
